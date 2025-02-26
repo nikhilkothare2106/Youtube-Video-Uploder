@@ -40,7 +40,7 @@ function Upload() {
               fullWidth
               slotProps={{
                 input: {
-                  startAdornment: (
+                  startadornment: (
                     <InputAdornment position="start">
                       <Title color="primary" />
                     </InputAdornment>
@@ -56,7 +56,7 @@ function Upload() {
               multiline
               slotProps={{
                 input: {
-                  startAdornment: (
+                  startadornment: (
                     <InputAdornment position="start">
                       <Description color="primary" />
                     </InputAdornment>
@@ -92,7 +92,7 @@ function Upload() {
                 label="Visibility"
                 slotProps={{
                   input: {
-                    startAdornment: (
+                    startadornment: (
                       <InputAdornment position="start">
                         <Visibility color="primary" />
                       </InputAdornment>
@@ -107,7 +107,9 @@ function Upload() {
             </FormControl>
 
             <Box display={"flex"} justifyContent={"center"}>
-              <Button variant="contained" color="primary" startIcon={<Publish />}>Publish</Button>
+              <Button variant="contained" color="primary" startIcon={<Publish />}>
+                Publish
+              </Button>
             </Box>
           </Box>
         </Paper>

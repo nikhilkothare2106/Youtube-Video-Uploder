@@ -8,8 +8,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import { useAuth } from "../helper/AuthContext";
 
 export default function NavBar() {
+
+
+  const {logoutUser,token}=useAuth()
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -35,7 +39,7 @@ export default function NavBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             YouTube Video Uploader
           </Typography>
-          {auth && (
+          {token && (
             <div>
               <IconButton
                 size="large"
@@ -63,7 +67,9 @@ export default function NavBar() {
                 onClose={handleClose}
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={()=>{
+                  logoutUser()
+                }}>Logout</MenuItem>
               </Menu>
             </div>
           )}
